@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sqlDb = myHelper.getWritableDatabase();
-                String sql = "Delete into idolTable values('" + editname.getText() + "'," + editCount.getText() + ")";
+                String sql = "delete from idoltable where idolname='" + editname.getText() +"'";
                 sqlDb.execSQL(sql);
                 sqlDb.close();
                 Toast.makeText(MainActivity.this, "삭제됨", Toast.LENGTH_LONG).show();
